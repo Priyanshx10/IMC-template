@@ -271,14 +271,14 @@ h2{
     width: 70px; /* Adjust width as needed */
     height:6px; /* Adjust height as needed */
     border-radius: 5px; /* Adjust border-radius as needed */
-    border: 1px solid #4b0082; /* Border color */
+    border: 1px solid #ffffff; /* Border color */
     background-color: transparent; /* Default background color */
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .dot.active {
-    background-color: #4b0082; /* Active background color */
+    background-color: #ffffff; /* Active background color */
 }
 
 @media (max-width: 768px) {
