@@ -611,7 +611,6 @@ footer .copyright{
         left:100%;
     }
 }
-
 .fixed-button {
     position: fixed;
     bottom: 20px; /* Distance from the bottom */
@@ -619,15 +618,20 @@ footer .copyright{
     width: 60px; /* Width of the button */
     height: 60px; /* Height of the button */
     background-color: #007bff; /* Button color */
-    color: white; /* Text color */
     border-radius: 50%; /* Makes the button circular */
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none; /* Removes underline from link */
-    font-size: 24px; /* Font size for the text */
+    overflow: hidden; /* Ensures the image is contained within the button */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow */
     transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.fixed-button img {
+    width: 100%; /* Makes the image fill the button */
+    height: 100%; /* Makes the image fill the button */
+    object-fit: cover; /* Ensures the image covers the button area */
 }
 
 .fixed-button:hover {
