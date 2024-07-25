@@ -293,6 +293,178 @@ h2{
     }
 }
 
+.leaders {
+    position: relative;
+    width: auto; 
+    height: 250px; 
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
+    background-color: transparent;
+    font-family: Arial, sans-serif; 
+    display: flex; 
+    padding-left: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.leader {
+    position: absolute; /* Change to fixed for full screen */
+    top: 0;         /* Align to the top */
+    left: 0;        /* Align to the left */
+    width: 100%;    /* Full width */
+    height: 100%;   /* Full height */
+    opacity: 0;     /* Start invisible */
+    transition: opacity 0.8s ease-in-out; 
+    display: flex; 
+    flex-direction: row; /* Maintain column layout */
+    justify-content: center; /* Center content vertically */
+    align-items: center;     /* Center content horizontally */
+    background: rgba(0, 0, 0, 0); /* Optional: semi-transparent background */
+}
+
+.leader.active {
+    opacity: 1;
+}
+
+.profile-pic {
+    width: 150px; /* Increased size */
+    height: 150px; /* Increased size */
+    border-radius: 50%;
+    margin: 25px auto; /* Increased margin */
+    display: block;
+    object-fit: cover; /* Ensure the image covers the area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Added box shadow */
+}
+
+.leaders h2{
+    text-align: center;
+    font-size: 1.8rem; /* Increased font size */
+    margin: 15px 0; /* Increased margin */
+    color: #000000; /* Changed text color */
+}
+
+.leaders p{
+    text-align: center;
+    font-style: italic; /* Style for quotes */
+    margin: 0 20px; /* Increased margin */
+    color: #000000; /* Changed text color */
+    line-height: 1.4; /* Added line height */
+    padding-right: 20px;
+}
+
+@media (min-width: 350px) and (max-width: 768px) {
+    .leaders {
+        position: relative;
+        width: auto; 
+        height: 500px; 
+        overflow: hidden;
+        border-radius: 15px; /* Increased border radius */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Increased box shadow */
+        background-color: transparent;
+        font-family: Arial, sans-serif; /* Changed font family */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+    }
+    
+    .leader {
+        position: absolute; /* Keep as absolute for positioning within .leaders */
+        top: 0;         /* Align to the top */
+        left: 0;        /* Align to the left */
+        width: 100%;    /* Full width */
+        height: 100%;   /* Full height */
+        opacity: 0;     /* Start invisible */
+        transition: opacity 0.8s ease-in-out; 
+        display: flex; 
+        flex-direction: column; /* Changed to column for vertical stacking */
+        justify-content: center; /* Center content vertically */
+        align-items: center;     /* Center content horizontally */
+        background: rgba(0, 0, 0, 0); /* Optional: transparent background */
+    }
+    
+    .leader.active {
+        opacity: 1; /* Make the leader visible when active */
+    }
+    
+    .profile-pic {
+        width: 150px; /* Increased size */
+        height: 150px; /* Increased size */
+        border-radius: 50%; /* Circular profile picture */
+        margin: 20px auto; /* Increased margin */
+        display: block;
+        object-fit: cover; /* Ensure the image covers the area */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Added box shadow */
+    }
+    
+    .leaders h2 {
+        text-align: center;
+        font-size: 1.8rem; /* Increased font size */
+        margin: 15px 0; /* Increased margin */
+        color: #333; /* Changed text color */
+    }
+    
+    .leaders p {
+        text-align: center;
+        font-style: italic; /* Style for quotes */
+        margin: 0 20px; /* Increased margin */
+        color: #666; /* Changed text color */
+        line-height: 1.4; /* Added line height */
+    }
+}
+/*Banners*/
+.program-carousel {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none; /* Hide all slides by default */
+}
+
+.carousel-slide.active {
+    display: block; /* Show the active slide */
+}
+
+.program-carousel img {
+    width: 100%; /* Make images responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.carousel-navigation {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    list-style: none;
+}
+
+.navigation-dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.navigation-dot.active {
+    background-color: #717171;
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+    .program-carousel {
+        /* Adjust slider styles for tablets and smaller devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .program-carousel {
+        /* Further adjustments for mobile devices */
+    }
+}
+
 
 footer{
     height: 400px;
@@ -438,4 +610,26 @@ footer .copyright{
     100%{
         left:100%;
     }
+}
+
+.fixed-button {
+    position: fixed;
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    width: 60px; /* Width of the button */
+    height: 60px; /* Height of the button */
+    background-color: #007bff; /* Button color */
+    color: white; /* Text color */
+    border-radius: 50%; /* Makes the button circular */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none; /* Removes underline from link */
+    font-size: 24px; /* Font size for the text */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.fixed-button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
 }

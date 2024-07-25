@@ -44,3 +44,42 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Select all slides and navigation dots
+const slides = document.querySelectorAll('.carousel-slide');
+const dots = document.querySelectorAll('.navigation-dot');
+
+let currentIndex = 0; // Initialize the current slide index
+
+// Function to show the slide at the current index
+function showSlide(index) {
+    // Hide all slides and remove active class from all dots
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        dots[i].classList.remove('active');
+    });
+
+    // Show the current slide and highlight the corresponding dot
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+}
+
+// Function to go to the next slide
+function nextSlide() {
+    currentIndex = (currentIndex + 1) % slides.length; // Increment index and wrap around
+    showSlide(currentIndex);
+}
+
+// Change slide every 5 seconds
+setInterval(nextSlide, 5000);
+
+// Optional: Add event listeners to dots for manual navigation
+dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+        currentIndex = index; // Set current index to the clicked dot's index
+        showSlide(currentIndex);
+    });
+});
+
+// Initial display of the first slide
+showSlide(currentIndex);
