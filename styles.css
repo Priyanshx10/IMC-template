@@ -39,12 +39,12 @@ h2{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #eeeef03b;
+    background-color: #eeeef088;
     height: 100px;
-    position: fixed; /* Changed from relative to fixed */
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* Ensure it spans the full width */
+    width: 100%;
     z-index: 1000;
 }
 
@@ -53,6 +53,12 @@ h2{
     left: 250px;
     display: flex;
     gap: 30px;
+    padding: 10px;
+}
+
+.contact-info {
+    position: relative;
+    left: 75%;
     padding: 10px;
 }
 
@@ -65,13 +71,13 @@ h2{
 
 .logo {
     position: absolute;
-    left: 50%;
+    left: 10%;
     transform: translateX(-50%);
 }
 
 .logo img {
     height: 40px;
-    display: flex ;
+    display: flex;
     justify-content: center;
     padding-left: 50px;
 }
@@ -135,25 +141,27 @@ h2{
 }
 
 @media (max-width: 768px) {
-
-    .header{
+    .header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         background-color: #eeeef03b;
         height: 120px;
-        position: fixed; /* Changed from relative to fixed */
+        position: fixed;
         top: 0;
         left: 0;
-        width: 100%; /* Ensure it spans the full width */
-        z-index: 1000; 
+        width: 100%;
+        z-index: 1000;
     }
+
     .nav-links {
         display: none;
     }
 
     .contact-info {
-        display: none;
+        position: relative;
+        left: 5%;
+        padding: 10px;
     }
 
     .burger-menu {
@@ -175,44 +183,37 @@ h2{
         transform: none;
         padding: 10px;
     }
-
 }
 
-@media (max-width: 1024x) {
-
-    .header{
+@media (max-width: 1024px) {
+    .header {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         background-color: #eeeef03b;
         height: 120px;
-        position: fixed; /* Changed from relative to fixed */
+        position: fixed;
         top: 0;
         left: 0;
-        width: 100%; /* Ensure it spans the full width */
-        z-index: 1000; 
+        width: 100%;
+        z-index: 1000;
     }
+
     .nav-links {
-    display: none;
-    position: relative;
-    left: 250px;
-    display: flex;
-    gap: 30px;
-    padding: 10px;
+        display: none;
     }
-    
+
+    .contact-info {
+        position: relative;
+        right: 40%;
+        padding: 10px;
+    }
 
     .burger-menu {
         display: block;
         padding: 10px;
     }
 
-    .logo {
-        /* position: relative; */
-        /* left: 100px; */
-        transform: none;
-        /* padding: 10px; */
-    }
     .burger-icon span {
         display: block;
         width: 25px;
@@ -220,6 +221,12 @@ h2{
         margin: 5px;
         background-color: #ffffff;
         transition: 0.4s;
+    }
+
+    .logo {
+        position: static;
+        transform: none;
+        padding: 10px;
     }
 }
 
