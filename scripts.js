@@ -45,6 +45,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const leaders = document.querySelectorAll('.leader');
+    let currentIndex = 0;
+
+    function showLeader(index) {
+        leaders.forEach((leader, i) => {
+            leader.classList.toggle('active', i === index);
+        });
+    }
+
+    function nextLeader() {
+        currentIndex = (currentIndex + 1) % leaders.length; // Increment index and wrap around
+        showLeader(currentIndex);
+    }
+
+    // Show the first leader initially
+    showLeader(currentIndex);
+
+    // Change leader every 4 seconds
+    setInterval(nextLeader, 4000);
+});
+
 // Select all slides and navigation dots
 const slides = document.querySelectorAll('.carousel-slide');
 const dots = document.querySelectorAll('.navigation-dot');
